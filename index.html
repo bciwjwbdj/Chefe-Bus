@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chefe Bus – Lanches em Cascavel</title>
+<meta name="description" content="Chefe Bus: lanches, dogs e X-burgers com hambúrguer caseiro no Alto Alegre, Cascavel-PR. Segunda a sábado, das 18h30 às 23h30.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D71920;--red-d:#a80f15;--white:#fff;--black:#000;--bg:#fff;--soft:#fbeeee;--ink:#000;--muted:#555;--line:#000;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141010;--soft:#221616;--ink:#fff;--muted:#cfc4c4;--line:#fff}}
+:root[data-theme="dark"]{--bg:#141010;--soft:#221616;--ink:#fff;--muted:#cfc4c4;--line:#fff}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Poppins,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--black);z-index:30}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Anton,Impact,sans-serif;font-weight:400;letter-spacing:.01em;line-height:1;margin:0}
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--black);color:#fff;border-bottom:4px solid var(--red)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 24px Anton,sans-serif;letter-spacing:.02em}
+.brand svg{width:34px;height:34px}
+nav a{color:#fff;text-decoration:none;font-weight:500;font-size:14px;margin-left:18px}
+nav a:hover{color:#ff6b70}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:999px;border:2px solid var(--red);transition:background .2s}
+.btn:hover{background:var(--red-d)}
+.btn.ghost{background:transparent;color:#000;border-color:#000}
+.btn.ghost:hover{background:#000;color:#fff}
+@media(max-width:640px){nav .hide{display:none}}
+/* hero */
+.hero{background:var(--red);color:#fff;position:relative;overflow:hidden;padding:56px 0 0}
+.hero .wrap{display:grid;gap:28px;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero h1{font-size:clamp(64px,13vw,150px);color:#000;text-transform:uppercase;line-height:.88}
+.hero p.lead{font-size:18px;max-width:30ch;margin:18px 0 26px;font-weight:500}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn{background:#000;border-color:#000}.hero .btn:hover{background:#fff;color:#000}
+.hero .btn.ghost{background:#fff;color:#000;border-color:#fff}.hero .btn.ghost:hover{background:transparent;color:#fff}
+.logo-big{justify-self:center;width:min(100%,340px);filter:drop-shadow(8px 8px 0 rgba(0,0,0,.85));transform:rotate(-4deg)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.logo-big{width:220px;justify-self:start}}
+/* destination board: the bus sign */
+.board{margin-top:44px;background:#000;border-top:6px solid #fff;color:#ffd24a;font:400 clamp(18px,3.4vw,30px) Anton,sans-serif;letter-spacing:.08em;text-transform:uppercase;overflow:hidden;white-space:nowrap}
+.board .track{display:inline-flex;gap:56px;padding:14px 0;animation:roll 28s linear infinite}
+.board span::before{content:"●";color:var(--red);margin-right:56px}
+@keyframes roll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.board .track{animation:none}html{scroll-behavior:auto}}
+/* sections */
+section{padding:72px 0}
+.title{font-size:clamp(40px,7vw,68px);text-transform:uppercase}
+.title i{display:block;width:84px;height:8px;background:var(--red);margin:12px 0 28px}
+/* menu */
+.tabs{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}
+.tab{font:400 22px Anton,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:8px 22px;border:3px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+@media(max-width:820px){.menu{grid-template-columns:1fr}}
+.item{padding:16px 0;border-bottom:2px dashed var(--red)}
+.item .row{display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+.item h3{font-size:25px;text-transform:uppercase}
+.price{font:400 25px Anton,sans-serif;color:var(--red);white-space:nowrap}
+.item p{margin:4px 0 0;color:var(--muted);font-size:14px;line-height:1.45}
+.item.hot{background:var(--soft);padding:16px 14px;border-radius:12px;border:2px solid var(--red);grid-column:1/-1;margin-bottom:12px}
+.item .tag{display:inline-block;background:#000;color:#fff;font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;margin-bottom:6px}
+.extras{margin-top:30px;border:3px solid var(--line);border-radius:14px;padding:18px 22px;max-width:520px}
+.extras h3{font-size:24px;margin-bottom:8px}
+.extras div{display:flex;justify-content:space-between;padding:3px 0}
+.note{margin-top:14px;color:var(--muted);font-size:14px}
+/* info */
+.info{background:#000;color:#fff}
+.info .title{color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.card{border:3px solid #fff;border-radius:16px;padding:24px}
+.card.red{background:var(--red);border-color:var(--red)}
+.card h3{font-size:30px;text-transform:uppercase;margin-bottom:12px}
+.hours{list-style:none;padding:0;margin:0}
+.hours li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.45)}
+.hours li:last-child{border:0;font-weight:600}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:600;margin:0 0 14px;background:#fff;color:#000;border-radius:999px;padding:4px 14px 4px 10px;font-size:14px}
+.status::before{content:"";width:10px;height:10px;border-radius:50%;background:#999}
+.status.on::before{background:#1fa64a}.status.off::before{background:var(--red)}
+.card p{margin:0 0 10px}
+.card .btn{margin-top:8px;background:#fff;color:#000;border-color:#fff}.card .btn:hover{background:#000;color:#fff}
+.card:not(.red) .btn{background:var(--red);color:#fff;border-color:var(--red)}
+.card:not(.red) .btn:hover{background:#fff;color:#000}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.chips span{border:2px solid #fff;border-radius:999px;padding:4px 14px;font-size:14px;font-weight:500}
+footer{background:var(--red);color:#fff;text-align:center;padding:30px 20px calc(30px + env(safe-area-inset-bottom,0px))}
+footer b{font:400 30px Anton,sans-serif;color:#000;letter-spacing:.03em}
+footer .script{font:400 22px Lobster,cursive}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="logo" viewBox="0 0 200 200"><path d="M100 10c50 0 90 36 90 80s-40 80-90 80c-14 0-27-3-38-8L22 190l12-40C20 135 10 114 10 90 10 46 50 10 100 10z" fill="#fff"/><path d="M100 22c43 0 78 31 78 68s-35 68-78 68c-14 0-27-3-38-9l-26 14 8-27C32 124 22 108 22 90c0-37 35-68 78-68z" fill="#D71920" stroke="#D71920"/><text x="100" y="94" text-anchor="middle" font-family="Lobster,cursive" font-size="44" fill="#fff">Chefe</text><text x="100" y="138" text-anchor="middle" font-family="Lobster,cursive" font-size="44" fill="#fff">Bus</text></symbol></defs></svg>
+
+<header><div class="wrap nav">
+<a class="brand" href="#topo" aria-label="Chefe Bus, início"><svg><use href="#logo"/></svg>Chefe Bus</a>
+<nav aria-label="Principal"><a href="#cardapio">Cardápio</a><a class="hide" href="#horario">Horário</a><a class="hide" href="#onde">Onde estamos</a><a class="btn" style="padding:8px 16px;margin-left:18px" href="https://wa.me/5545999083020" target="_blank" rel="noopener">WhatsApp</a></nav>
+</div></header>
+
+<main id="topo">
+<div class="hero">
+<div class="wrap">
+<div>
+<h1>Chefe<br>Bus</h1>
+<p class="lead">Lanche feito na hora, com hambúrguer caseiro. Do dog ao X-Bagunça, tem para todo fome.</p>
+<div class="cta"><a class="btn" href="#cardapio">Ver cardápio</a><a class="btn ghost" href="#onde">Como chegar</a></div>
+</div>
+<svg class="logo-big" viewBox="0 0 200 200" role="img" aria-label="Logo Chefe Bus"><use href="#logo"/></svg>
+</div>
+<div class="board" aria-hidden="true"><div class="track"><span>Segunda a sábado</span><span>18h30 às 23h30</span><span>Alto Alegre, Cascavel</span><span>Cartão e Pix</span><span>Segunda a sábado</span><span>18h30 às 23h30</span><span>Alto Alegre, Cascavel</span><span>Cartão e Pix</span></div></div>
+</div>
+
+<section id="cardapio"><div class="wrap">
+<h2 class="title">Cardápio<i></i></h2>
+<div class="tabs" role="tablist"><button class="tab" role="tab" aria-selected="true" data-t="lanches">Lanches</button><button class="tab" role="tab" aria-selected="false" data-t="bebidas">Bebidas</button></div>
+<div id="menu" class="menu" role="tabpanel"></div>
+<div id="extras" class="extras"><h3>Adicionais</h3><div><span>Cheddar</span><b>R$ 3,00</b></div><div><span>Hambúrguer, calabresa ou bacon</span><b>R$ 6,00</b></div><div><span>Ovo</span><b>R$ 3,00</b></div></div>
+<p class="note">Todos os lanches levam alface e tomate, exceto os dogs. Valores sujeitos a alteração.</p>
+</div></section>
+
+<section class="info" id="horario"><div class="wrap">
+<h2 class="title">Venha comer<i></i></h2>
+<div class="grid">
+<div class="card red">
+<h3>Horário</h3>
+<p id="status" class="status">Verificando…</p>
+<ul class="hours"><li><span>Segunda a sábado</span><span>18h30 às 23h30</span></li><li><span>Domingo</span><span>Fechado</span></li></ul>
+<div class="chips"><span>Cartão</span><span>Pix</span><span>Banheiro aos fundos</span></div>
+<p style="margin-top:14px;font-size:14px">Não trabalhamos com entregas.</p>
+</div>
+<div class="card" id="onde">
+<h3>Onde estamos</h3>
+<p>R. Cuiabá, 4523<br>Alto Alegre, Cascavel – PR<br>CEP 85805-260</p>
+<p><a href="tel:+5545999083020" style="font:400 30px Anton,sans-serif;text-decoration:none">(45) 99908-3020</a></p>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&query=R.+Cuiab%C3%A1,+4523+-+Alto+Alegre,+Cascavel+-+PR,+85805-260" target="_blank" rel="noopener">Abrir no mapa</a>
+<a class="btn" href="https://wa.me/5545999083020" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+<a class="btn" href="https://www.instagram.com/cheff_bus" target="_blank" rel="noopener">Instagram @cheff_bus</a>
+</div>
+</div>
+</div></section>
+</main>
+
+<footer><b>Chefe Bus</b><br><span class="script">Agradecemos a preferência. Volte sempre!</span></footer>
+
+<script>
+var D={
+lanches:[
+["Combo 4 Dogs duplo + refrigerante 2 litros","Pão, maionese, mussarela, duas salsichas, batata palha e molho.",50,"Combo"],
+["Dog Duplo","Pão, maionese, mussarela, duas salsichas, batata palha e molho.",12],
+["Dog Completo","Pão, maionese, mussarela, salsicha, bacon, calabresa, milho, farofa, batata palha e alface.",19],
+["X-Bagunça","Pão, maionese, mussarela, presunto, hambúrguer caseiro, calabresa, ovo, bacon, frango, salsicha, carne, cheddar, alface e tomate.",30],
+["X-Tudo","Pão, maionese, mussarela, presunto, hambúrguer caseiro, calabresa, ovo, bacon, frango, alface e tomate.",25],
+["X-Picanha","Pão, maionese, mostarda, molho barbecue, carne picada, mussarela, presunto, alface e tomate.",21],
+["X-Egg","Pão, maionese, mussarela, presunto, hambúrguer caseiro, ovo, alface e tomate.",18],
+["X-Calabresa","Pão, maionese, mussarela, presunto, hambúrguer caseiro, calabresa, alface e tomate.",20],
+["X-Bacon","Pão, maionese, presunto, mussarela, hambúrguer caseiro, bacon, alface e tomate.",21],
+["X-Frango","Pão, maionese, presunto, mussarela, frango desfiado, alface e tomate.",14],
+["X-Burger","Pão, maionese, presunto, mussarela e hambúrguer caseiro.",16],
+["X-Salada","Pão, maionese, presunto, mussarela, hambúrguer caseiro, alface e tomate.",16],
+["X-Vegetariano","Pão, maionese, milho, ovo, queijo, batata palha, alface e tomate.",19]],
+bebidas:[
+["Água com ou sem gás","Unidade.",4],
+["Refrigerante lata","350 ml.",6],
+["Refrigerante pet","600 ml.",9],
+["Coca-Cola litro vidro","",9],
+["Refrigerante 2 litros","Sabores.",12],
+["Coca-Cola 2 litros","",15],
+["Suco natural 300 ml","Abacaxi com hortelã, morango ou laranja.",7],
+["Suco cremoso 300 ml","Abacaxi com hortelã, morango ou laranja.",8],
+["Suco Del Valle lata","",6],
+["Cerveja lata","350 ml.",6],
+["Cerveja long neck","",9]]};
+var m=document.getElementById("menu"),ex=document.getElementById("extras");
+function brl(n){return "R$ "+n.toFixed(2).replace(".",",")}
+function esc(s){return s.replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+function show(t){
+ m.innerHTML=D[t].map(function(i){
+  return '<div class="item'+(i[3]?' hot':'')+'">'+(i[3]?'<span class="tag">Para dividir</span>':'')+'<div class="row"><h3>'+esc(i[0])+'</h3><span class="price">'+brl(i[2])+'</span></div>'+(i[1]?'<p>'+esc(i[1])+'</p>':'')+'</div>';
+ }).join("");
+ ex.style.display=t==="lanches"?"block":"none";
+ document.querySelectorAll(".tab").forEach(function(b){b.setAttribute("aria-selected",b.dataset.t===t)});
+}
+document.querySelectorAll(".tab").forEach(function(b){b.addEventListener("click",function(){show(b.dataset.t)})});
+show("lanches");
+(function(){
+ var el=document.getElementById("status");
+ try{
+  var p=new Intl.DateTimeFormat("en-US",{timeZone:"America/Sao_Paulo",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()),o={};
+  p.forEach(function(x){o[x.type]=x.value});
+  var mins=(+o.hour%24)*60+ +o.minute,day=o.weekday;
+  var open=day!=="Sun"&&mins>=1110&&mins<1410;
+  el.className="status "+(open?"on":"off");
+  el.textContent=open?"Aberto agora, até 23h30":(day==="Sun"?"Fechado hoje, abrimos segunda às 18h30":(mins<1110?"Fechado, abrimos hoje às 18h30":(day==="Sat"?"Fechado, abrimos segunda às 18h30":"Fechado, abrimos amanhã às 18h30")));
+ }catch(e){el.style.display="none"}
+})();
+</script>
+</body>
+</html>
